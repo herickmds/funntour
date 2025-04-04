@@ -1,8 +1,8 @@
+from .auth import router as auth
+from .users import router as users
+from .boats import router as boats
+from .bookings import router as bookings
+from .content import router as content
+from .locations import router as locations
 
-from . import auth
-from . import users
-from . import boats
-from . import content
-from . import locations
-
-__all__ = ["auth", "users", "boats", "content", "locations"]
+__all__ = ["auth", "users", "boats", "content", "locations", "bookings"]
