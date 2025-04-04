@@ -3,8 +3,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
 
-# Obtém a URL do banco de dados a partir das variáveis de ambiente ou usa um valor padrão
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://postgres:postgres@localhost/funn_tour")
+# Obtém a URL do banco de dados do Replit
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    raise Exception("DATABASE_URL não está configurada. Por favor, crie um banco de dados no Replit.")
 
 # Cria o engine do SQLAlchemy
 engine = create_engine(DATABASE_URL)
