@@ -3,7 +3,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 from ..schemas.user import UserCreate, Token #Import from schemas
 from ..models.user import User #Import from models
 from ..auth.security import create_access_token, get_current_user #Import from auth.security
-from typing import Any
+from typing import Any, Optional, Union
 from sqlalchemy.orm import Session
 from ..database import get_db
 
@@ -13,13 +13,13 @@ router = APIRouter()
 from app.auth import get_password_hash, verify_password #Import necessary functions from original app.auth
 
 
-def authenticate_user(db: Session, username: str, password: str) -> User | None:
+def authenticate_user(db: Session, username: str, password: str) -> Optional[User]:
     user = db.query(User).filter(User.username == username).first()
     if not user or not verify_password(password, user.password):
         return None
     return user
 
-def get_user_by_email(db: Session, email: str) -> User | None:
+def get_user_by_email(db: Session, email: str) -> Optional[User]:
     return db.query(User).filter(User.email == email).first()
 
 def create_user(db: Session, user: UserCreate) -> User:
