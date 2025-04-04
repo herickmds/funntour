@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, SessionLocal
 from . import models
 
-from .routers import auth, users, boats, locations # Removed content and bookings to break circular dependency
+from .routers import auth, users, boats, locations
 
 app = FastAPI(
     title="Funn Tour API",
@@ -31,7 +31,6 @@ app.add_middleware(
 app.include_router(auth.router, prefix="/api", tags=["auth"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 app.include_router(boats.router, prefix="/api/boats", tags=["boats"])
-#app.include_router(bookings.router, prefix="/api/bookings", tags=["bookings"]) # Removed to break circular dependency.  Needs to be addressed separately.
 app.include_router(locations.router, prefix="/api/locations", tags=["locations"])
 
 # Criar tabelas
