@@ -1,6 +1,0 @@
-from .user import User, UserCreate, UserUpdate, Token, TokenData, PasswordChange, PasswordRecovery, VerifyRecoveryCode, ResetPassword, UserRole
-from .location import Country, CountryCreate, CountryUpdate, State, StateCreate, StateUpdate, City, CityCreate, CityUpdate, StateWithCountry, CityWithState
-from .boat import BoatType, BoatTypeCreate, BoatTypeUpdate, Boat, BoatCreate, BoatUpdate, BoatDetail, BoatImage, BoatImageCreate, Marina, MarinaCreate, MarinaUpdate, Route, RouteCreate, RouteUpdate, BoatRoute, BoatRouteCreate, BoatRouteWithRoute, FuelType, BoatStatus, Prices
-from .booking import Booking, BookingCreate, BookingUpdate, BookingStatusUpdate, BookingDetail, BookingStatus, PeriodType
-from .content import Article, ArticleCreate, ArticleUpdate, ArticleStatusUpdate, ArticleWithAuthor, Page, PageCreate, PageUpdate, PageStatusUpdate, PageSEO, PageSEOCreate, PageSEOUpdate, PageWithSEO
-from .itinerary import Itinerary, ItineraryCreate, ItineraryUpdate, ItineraryWithPartner, PartnerPrice, PartnerPriceCreate, PartnerPriceUpdate, PartnerPriceWithDetails, PricingType, DayType
