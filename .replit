@@ -10,7 +10,7 @@ deploymentTarget = "autoscale"
 run = ["sh", "-c", "npm run dev"]
 
 [workflows]
-runButton = "Project"
+runButton = "FastAPI"
 
 [[workflows.workflow]]
 name = "Project"
@@ -35,6 +35,15 @@ task = "packager.installForAll"
 task = "shell.exec"
 args = "npm run dev"
 waitForPort = 5000
+
+[[workflows.workflow]]
+name = "FastAPI"
+author = 3054946
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd fastapi_backend && python -m app.main"
 
 [[ports]]
 localPort = 5000
