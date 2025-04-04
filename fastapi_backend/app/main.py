@@ -5,6 +5,9 @@ from . import models
 
 from .routers import auth, users, boats, locations
 
+# Importar bookings diretamente
+from .routers.bookings import router as bookings
+
 app = FastAPI(
     title="Funn Tour API",
     description="""
@@ -32,6 +35,8 @@ app.include_router(auth.router, prefix="/api", tags=["auth"])
 app.include_router(users.router, prefix="/api/users", tags=["users"])
 app.include_router(boats.router, prefix="/api/boats", tags=["boats"])
 app.include_router(locations.router, prefix="/api/locations", tags=["locations"])
+app.include_router(bookings, prefix="/api/bookings", tags=["bookings"]) # Added bookings router
+
 
 # Criar tabelas
 models.Base.metadata.create_all(bind=engine)
