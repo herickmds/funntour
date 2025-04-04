@@ -3,10 +3,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, SessionLocal
 from . import models
 
-from .routers import auth, users, boats, locations
+from .routers.auth import router as auth_router
+from .routers.users import router as users_router
+from .routers.boats import router as boats_router
+from .routers.bookings import router as bookings_router
+from .routers.locations import router as locations_router
 
-# Importar bookings diretamente
-from .routers.bookings import router as bookings
 
 app = FastAPI(
     title="Funn Tour API",
@@ -31,11 +33,11 @@ app.add_middleware(
 )
 
 # Incluir routers
-app.include_router(auth.router, prefix="/api", tags=["auth"])
-app.include_router(users.router, prefix="/api/users", tags=["users"])
-app.include_router(boats.router, prefix="/api/boats", tags=["boats"])
-app.include_router(locations.router, prefix="/api/locations", tags=["locations"])
-app.include_router(bookings, prefix="/api/bookings", tags=["bookings"]) # Added bookings router
+app.include_router(auth_router, prefix="/api/auth", tags=["auth"])
+app.include_router(users_router, prefix="/api/users", tags=["users"])
+app.include_router(boats_router, prefix="/api/boats", tags=["boats"])
+app.include_router(locations_router, prefix="/api/locations", tags=["locations"])
+app.include_router(bookings_router, prefix="/api/bookings", tags=["bookings"])
 
 
 # Criar tabelas
