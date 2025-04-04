@@ -1,1 +1,3 @@
-# This file makes the routers directory a Python package
+from . import auth, users, boats, bookings, content, locations
+
+__all__ = ["auth", "users", "boats", "bookings", "content", "locations"]
