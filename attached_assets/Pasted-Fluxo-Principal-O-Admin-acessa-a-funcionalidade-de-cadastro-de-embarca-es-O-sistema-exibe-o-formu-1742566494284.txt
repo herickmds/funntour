@@ -1,0 +1,37 @@
+Fluxo Principal:
+O Admin acessa a funcionalidade de cadastro de embarcações.
+O sistema exibe o formulário de cadastro com os seguintes campos obrigatórios e opcionais:
+Nome da Embarcação
+Situação (Ativa, Inativa)
+Tipo de Embarcação (Superyacht, Yacht, Lancha, Jet ski, Veleiro, Catamarã, Offshore, Outro)
+Quantidade de Passageiros
+Tem Marinheiro? (Sim, Não)
+Modelo
+Tamanho (Pés)
+Marina
+Velocidade de Cruzeiro
+Permite Pernoite? (Sim, Não)
+País
+Estado
+Cidade
+Combustível (Gasolina, Diesel)
+Suites
+Cabines
+Banheiros
+Documento TIE (upload do arquivo)
+Fotos 
+O Admin preenche o formulário com os dados da embarcação e faz o upload do documento TIE.
+O sistema valida a presença do documento TIE. Caso não seja fornecido, o botão de nova embarcação não é habilitado e um alerta é exibido.
+O Admin associa roteiros à embarcação através de um campo de seleção de roteiros.
+O Admin define valores distintos para dias da semana, finais de semana e feriados, além de configurar diferentes preços para horários específicos (manhã, tarde, noite) para cada roteiro.
+O sistema valida os dados inseridos, verificando se são válidos e se a descrição da embarcação já está cadastrada.
+Caso os dados sejam válidos, o sistema cria a nova embarcação com os roteiros associados, envia uma confirmação e exibe a mensagem de sucesso "Embarcação cadastrada com sucesso!".
+Caso os dados sejam inválidos ou a descrição já exista, o sistema exibe mensagens de erro indicando os campos com problemas.
+Fluxo Alternativo:
+Caso o Admin não preencha os campos obrigatórios, o sistema informa quais campos não foram preenchidos.
+Caso o Admin não disponibilize o documento de autorização de condução de todas as embarcações válidas, o botão de nova embarcação não é habilitado e um alerta é exibido até que o documento seja enviado.
+Mensagens:
+Cadastro realizado -> "Embarcação cadastrada com sucesso!"
+Registro existente -> "Descrição já existente em um registro!"
+Observações:
+O Admin pode definir valores distintos para dias da semana, finais de semana e feriados, além de configurar diferentes preços para horários específicos.

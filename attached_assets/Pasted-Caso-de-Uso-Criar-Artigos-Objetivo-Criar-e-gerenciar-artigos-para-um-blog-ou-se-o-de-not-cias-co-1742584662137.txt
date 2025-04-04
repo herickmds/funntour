@@ -1,0 +1,58 @@
+Caso de Uso: Criar Artigos
+Objetivo:
+Criar e gerenciar artigos para um blog ou seção de notícias, com conteúdo relevante para os usuários, como dicas de passeios, novidades da empresa, etc.
+Fluxo Principal:
+O Admin acessa o sistema com suas credenciais.
+O Admin navega até a seção "Artigos".
+O sistema exibe uma lista dos artigos existentes (se houver).
+O Admin clica em "Criar novo artigo".
+O sistema apresenta um formulário para preenchimento dos campos de texto para o Admin escrever o artigo, seguindo a seguinte estrutura
+//
+{
+    "id": 47,
+    "date_publicacao": "07-02-2025",
+    "data_criacao": "07-02-2025",
+    "enabled": true,
+    "eh_rascunho": false,
+    "eh_excluido": false,
+    "title": "",
+    "path": "",
+    "author": "",
+    "description": "Descubra como o RAG está revolucionando a geração de conteúdo e por que você deve adotá-lo.",
+    "paragraphs": [
+        "No cenário atual, cada vez mais dinâmico e saturado de informações, as empresas buscam formas eficientes de gerar conteúdo relevante e impactante. É aqui que entra o conceito de RAG, ou Retrieval-Augmented Generation. Essa tecnologia combina a geração de conteúdo com a recuperação de informações, possibilitando resultados mais ricos e contextualizados para os usuários.",
+        "Mas, afinal, o que é RAG? Em linhas simples, RAG é um modelo de inteligência artificial que busca informações em uma base de dados específica e as utiliza para gerar respostas contextualizadas. A mágica está na capacidade de juntar o que já existe, extraindo conhecimento e unindo a criatividade da IA na formação de respostas e conteúdos.",
+        "Uma das principais vantagens do RAG é sua capacidade de reduzir o risco de desinformação. Ao buscar informações diretamente de uma fonte confiável, o modelo garante que o conteúdo gerado seja baseado em dados reais, o que é crucial em áreas que exigem precisão, como saúde e finanças.",
+        "Além disso, o RAG oferece suporte em escala. À medida que mais perguntas são feitas, a tecnologia não apenas gera respostas, mas também aprende e melhora com cada interação. Isso é fundamental em ambientes onde agilidade e precisão são essenciais.",
+        "Escolher usar RAG significa optar por uma solução que traz eficiência e relevância ao conteúdo produzido. Com a crescente demanda por respostas rápidas e precisas, não adotar essa tecnologia pode deixar sua empresa em desvantagem competitiva.",
+        "Portanto, se você ainda está em dúvida sobre a adoção do RAG, considere as implicações a longo prazo. O cenário empresarial nunca foi tão voltado para a inovação, e aproveitar tecnologias como essa pode ser o diferencial que sua organização precisa.",
+        "Em resumo, RAG não é apenas uma tendência passageira, mas uma mudança de paradigma que redefine como geramos e consumimos conteúdo. Integrar essas soluções à sua estratégia pode não apenas impulsionar a produtividade, mas também garantir qualidade nas informações utilizadas."
+    ],
+    "image_section": {
+            "image": "",
+            "caption": ""
+     },
+    "tags": [
+        "Inteligência Artificial",
+        "Tecnologia"
+    ]
+}
+//
+
+O Admin escreve o artigo, define um título, e clica em "Publicar".
+O sistema publica o artigo e o exibe na lista de artigos.
+Fluxos Alternativos:
+4a. Caso não haja artigos publicados, o sistema exibe uma mensagem informando que a lista está vazia.
+6a. O Admin pode optar por editar um artigo existente, clicando no artigo desejado na lista.
+7a. O Admin pode optar por salvar o artigo como rascunho para finalizar posteriormente.
+Regras de Negócio:
+Somente o Admin possui permissão para criar e gerenciar artigos.
+O sistema deve permitir o agendamento da publicação de artigos.
+Ao excluir um artigo, o mesmo será enviado para a lixeira, podendo ser excluído definitivamente ou recuperado a partir da lixeira.
+Mensagens:
+Lista vazia -> "Nenhum artigo publicado!"
+Criar Artigo -> "Artigo criado com sucesso!"
+Atualizar Artigo -> "Artigo atualizado com sucesso!"
+Enviar Artigo para a lixeira -> "Artigo enviado para a lixeira!"
+Excluir Artigo individualmente -> "Artigo excluído com sucesso!"
+Excluir todos os Artigos da lixeira -> "Artigos excluídos com sucesso!"

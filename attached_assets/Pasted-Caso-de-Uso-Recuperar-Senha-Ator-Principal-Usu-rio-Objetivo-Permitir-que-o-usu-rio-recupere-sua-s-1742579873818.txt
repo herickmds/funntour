@@ -1,0 +1,45 @@
+Caso de Uso: Recuperar Senha
+Ator Principal: Usuário
+Objetivo: Permitir que o usuário recupere sua senha esquecida de forma segura e eficiente.
+Fluxo Principal:
+O usuário acessa a URL principal de login.
+O usuário clica no link “Recuperar senha”, pois não se lembra da senha cadastrada anteriormente.
+O sistema solicita que o usuário informe seu CPF/CNPJ para verificação.
+O sistema valida o CPF/CNPJ informado:
+Se válido, o sistema gera um código de recuperação e o envia para o e-mail e/ou WhatsApp cadastrado do usuário.
+Se inválido, o sistema exibe a Mensagem 3 (ver Fluxo Alternativo 1).
+O usuário recebe o código e o insere no campo “Código de Verificação” na interface do sistema.
+O sistema valida o código:
+Se o código for válido e dentro do prazo de expiração, o sistema exibe os campos “Nova Senha” e “Confirme a Nova Senha”.
+Se o código for inválido ou expirado, o sistema exibe a Mensagem 2 (ver Fluxo Alternativo 2).
+O usuário preenche os campos “Nova Senha” e “Confirme a Nova Senha” e solicita a alteração.
+O sistema valida se as senhas coincidem e atendem aos critérios de segurança (ex.: mínimo de caracteres, uso de números, letras maiúsculas/minúsculas, etc.):
+Se válidas, o sistema atualiza a senha e exibe a Mensagem 1.
+Se inválidas, o sistema exibe a Mensagem 4 (ver Fluxo Alternativo 3).
+Fluxos Alternativos:
+Fluxo Alternativo 1: CPF/CNPJ Inválido
+3.1. Se o CPF/CNPJ informado for inválido ou não estiver cadastrado, o sistema exibe a Mensagem 3:
+"CPF/CNPJ inválido ou não cadastrado. Por favor, verifique os dados informados."
+Fluxo Alternativo 2: Código Inválido ou Expirado
+6.1. Se o código informado for inválido ou expirado, o sistema exibe a Mensagem 2:
+"Código inválido ou expirado! Por favor, solicite um novo código."
+Fluxo Alternativo 3: Senhas Não Conferem ou Não Atendem aos Critérios
+8.1. Se as senhas não coincidirem ou não atenderem aos critérios de segurança, o sistema exibe a Mensagem 4:
+"As senhas não coincidem ou não atendem aos requisitos de segurança. Tente novamente."
+Mensagens do Sistema:
+Senha Alterada: "Senha alterada com sucesso!"
+Código Inválido: "Código inválido ou expirado! Por favor, solicite um novo código."
+CPF/CNPJ Inválido: "CPF/CNPJ inválido ou não cadastrado. Por favor, verifique os dados informados."
+Senhas Inválidas: "As senhas não coincidem ou não atendem aos requisitos de segurança. Tente novamente."
+Regras de Negócio:
+O código de recuperação deve ter um prazo de expiração (ex.: 5 minutos).
+O código deve ser composto por 6 dígitos numéricos.
+A nova senha deve atender aos seguintes critérios:
+Mínimo de 8 caracteres.
+Pelo menos 1 letra maiúscula.
+Pelo menos 1 número.
+Pelo menos 1 caractere especial (ex.: @, #, $).
+Pós-Condições:
+A senha do usuário é atualizada no banco de dados.
+O código de recuperação utilizado é invalidado.
+O usuário é redirecionado para a tela de login com a nova senha já ativa.
