@@ -179,7 +179,12 @@ class Boat(BoatBase):
     updatedAt: Optional[datetime] = None
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+class BoatResponse(Boat):
+    boatType: Optional[BoatType] = None
+    marina: Optional[Marina] = None
+    images: List[BoatImage] = []
 
 class BoatDetail(Boat):
     boatType: BoatType
