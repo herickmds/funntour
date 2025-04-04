@@ -1,0 +1,75 @@
+campos de cadastro usuario:
+Tipo (Cliente/Parceiro/Admin)
+E-mail
+Senha
+Nome Completo
+Telefone (opcional para Admin)
+Whatsapp (opcional para Admin)
+Data de Nascimento (opcional para Admin)
+CPF/CNPJ
+CEP (preenchimento automático do endereço)
+Endereço Completo
+Foto (opcional para Admin, obrigatória para Cliente/Parceiro)
+Aceito os termos
+Maior de 18 anos (opcional para Admin)
+
+Regras de Negócio
+1. Cadastrar Cliente/Parceiro
+○ Validação de e-mail e CPF/CNPJ únicos.
+○ Senha deve ser alfanumérica de no mínimo 8 caracteres contendo no mínimo
+1 caractere especial, 1 caractere maiúsculo, 1 caractere minúsculo, e 1
+número.
+○ Campos obrigatórios preenchidos.
+○ Foto obrigatória.
+○ Data de nascimento e confirmação de maioridade.
+2. Editar Perfil Cliente/Parceiro
+○ Campos obrigatórios validados.
+○ Foto obrigatória.
+○ Atualização de dados.
+Mensagens de Erro e Sucesso!
+1. “CPF/CNPJ ou E-mail já cadastrado(s) em nosso sistema!”
+2. “CPF/CNPJ inválido”
+3. “A senha deve conter 1 caractere especial, 1 caractere numérico, 1 letra maiúscula e
+1 letra minúscula e ser maior que 6 dígitos!”
+4. “Senhas não são iguais!”
+5. “Cadastro realizado com sucesso!”
+6. “Cadastro atualizado com sucesso!”
+
+
+Caso de Uso: Login
+● Ator: Usuários
+● Objetivo: Acessar funcionalidades privadas.
+Fluxo Principal:
+1. O Usuário acessa a url principal de login, preencha os campos ''cnpj/cpf " e ''Senha''
+e clica em "entrar''.
+2. O Sistema valida a autenticidade e autoriza o login na aplicação.
+3. Iniciando a página default
+Fluxo Alternativo:
+1. Caso o usuário forneça os dados para autenticação e o sistema validar que são
+inválidos, retorna mensagem 1.
+2. Caso o usuário não saiba a senha de login, poderá recuperar através do link
+''Recuperar senha ".
+● .
+Mensagem:
+1. Senha ou cpf/cnpj invalido -> ''Senha ou CPF/CNPJ inválidos!''.
+
+
+Caso de Uso: Recuperar senha
+● Ator: Usuários
+● Objetivo: Recuperar senha esquecida.
+Fluxo Principal:
+3. O usuário acessa a URL principal de login e não sabe a senha cadastrada
+anteriormente, e clicar no link em “Recuperar senha “.
+4. O Sistema Solicita as informações de “CPF/CNPJ”, faz a validação e caso
+seja válido envia um código válido por e-mail e/ou WhatsApp para o usuário.
+5. O Usuário digita o Código recebido no campo “código” e a aplicação valida
+se o código é válido.
+6. Após a validação do Código a aplicação disponibiliza ao usuário os campos
+“Nova senha” e “Confirme a nova senha” para poder preencher os campos e solicitar a
+alteração e recuperação da senha.
+7. O Sistema faz a alteração da senha e emite a mensagem 1.
+Fluxo Alternativo:
+3. Caso o usuário forneça o código válido ou expirado, retorna mensagem 2.
+Mensagem:
+1. Senha Alterada -> ''Senha alterada com sucesso!''.
+2. Código Inválido -> Código inválido ou expirado!''.
