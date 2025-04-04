@@ -9,8 +9,34 @@ import uvicorn
 
 app = FastAPI(
     title="Funn Tour API",
-    description="API para gerenciamento de passeios de barco",
-    version="1.0.0"
+    description="""
+    API para gerenciamento de passeios de barco
+    
+    ## Perfis de Usuário
+    
+    * **Admin**: Acesso total ao sistema
+    * **Parceiro**: Gerencia embarcações, roteiros e preços
+    * **Cliente**: Visualiza reservas
+    
+    ## Funcionalidades
+    
+    * Autenticação e Recuperação de Senha
+    * Gestão de Usuários
+    * Gestão de Embarcações
+    * Gestão de Roteiros
+    * Gestão de Reservas
+    * Gestão de Conteúdo
+    * Gestão de Localizações
+    """,
+    version="1.0.0",
+    openapi_tags=[
+        {"name": "auth", "description": "Autenticação e recuperação de senha"},
+        {"name": "users", "description": "Operações com usuários"},
+        {"name": "boats", "description": "Gestão de embarcações"},
+        {"name": "bookings", "description": "Gestão de reservas"},
+        {"name": "content", "description": "Gestão de conteúdo"},
+        {"name": "locations", "description": "Gestão de localizações"},
+    ]
 )
 
 # Configuração CORS
