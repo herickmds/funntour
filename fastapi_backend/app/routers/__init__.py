@@ -1,3 +1,8 @@
-from . import auth, users, boats, bookings, content, locations
 
-__all__ = ["auth", "users", "boats", "bookings", "content", "locations"]
+from . import auth
+from . import users
+from . import boats
+from . import content
+from . import locations
+
+__all__ = ["auth", "users", "boats", "content", "locations"]
